@@ -1,8 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
+
+// Стили
 import "./header-styles.css";
+
+// Картинки
 import iconToogle from "../../../Accets/images/toggle-off-svgrepo-com.svg";
 import ButtonLink from "../../buttons/button__link";
-import { useMediaQuery } from "react-responsive";
+
+// tsx компоненты
 import MobileMenu from "./components/mobile-menu";
 
 export default function Header() {
@@ -11,9 +18,9 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header__wrapper">
-        <a className="header__logo--link" href="#0">
+        <Link to="/" className="header__logo--link">
           Web_Hook
-        </a>
+        </Link>
 
         <div className="header__menu">
           {isMobile ? (
@@ -27,7 +34,12 @@ export default function Header() {
                   alt="toogle"
                 />
               </button>
-              <ButtonLink fill={true} large={true} placeholder="Войти" />
+              <ButtonLink
+                path="singin"
+                placeholder="Войти"
+                fill={true}
+                large={true}
+              />
             </>
           )}
         </div>

@@ -10,7 +10,7 @@
   justify-content: center;
 }
 
-.header__mobile-menu-button--button {
+.header__mobile-menu-button {
   border: 0;
   background-color: transparent;
   cursor: pointer;

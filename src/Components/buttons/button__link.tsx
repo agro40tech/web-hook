@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import "./button__link.css";
 
 interface ButtonLinkProps {
@@ -25,8 +27,8 @@ export default function ButtonLink({
     : null;
 
   return (
-    <button className={`button ${ClassSize} ${ClassType}`}>
+    <Link to={`${path}`} className={`button ${ClassSize} ${ClassType}`}>
       {placeholder}
-    </button>
+    </Link>
   );
 }
