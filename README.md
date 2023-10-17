@@ -1,5 +1,3 @@
-# Проект WEB\_\_HOOK as социальная сеть
-
 ## Redux Store
 
 ### Hook useAction
