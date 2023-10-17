@@ -6,6 +6,7 @@ import { store } from "./store/store";
 import Layout from "./Components/Layout";
 import FeedPosts from "./Pages/feed__posts";
 import SingIn from "./Pages/sing-in";
+import SingUp from "./Pages/sing-up";
 
 import "./Accets/styles/fonts.css";
 import "./Accets/styles/global-styles.css";
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<FeedPosts />} />
             <Route path="singin" element={<SingIn />} />
+            <Route path="singup" element={<SingUp />} />
           </Route>
         </Routes>
       </Provider>

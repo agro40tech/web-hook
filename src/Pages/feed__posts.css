@@ -1,0 +1,13 @@
+.feed-posts {
+  max-width: 585px;
+}
+
+.feed-posts__title {
+  text-align: center;
+  font-weight: inherit;
+  font-size: 36px;
+}
+
+.feed-posts__posts {
+  height: 100%;
+}

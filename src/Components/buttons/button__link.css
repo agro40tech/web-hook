@@ -1,13 +1,14 @@
 .button {
+  font-family: inherit;
   border: 0;
-  font-family: JetBrains Mono;
-  color: var(--primary-accent-color);
+  color: inherit;
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
   transition: 0.3s all linear;
   text-decoration: none;
   text-align: center;
+  min-width: 150px;
 }
 
 .button--fill {
