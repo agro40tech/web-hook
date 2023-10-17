@@ -4,6 +4,7 @@ interface ButtonSubmitProps {
   fill?: boolean;
   transparent?: boolean;
   placeholder?: string;
+  onclick?: any;
 }
 
 export default function ButtonSubmit({
@@ -12,6 +13,7 @@ export default function ButtonSubmit({
   fill,
   transparent,
   placeholder,
+  onclick,
 }: ButtonSubmitProps) {
   const ClassSize = large ? "button--large" : medium ? "button--medium" : null;
   const ClassType = fill
@@ -19,9 +21,13 @@ export default function ButtonSubmit({
     : transparent
     ? "button--transparent"
     : null;
+  const OnClick = onclick ? onclick : null;
 
   return (
-    <button type="submit" className={`button ${ClassSize} ${ClassType}`}>
+    <button
+      type="button"
+      onClick={OnClick ? OnClick : null}
+      className={`button ${ClassSize} ${ClassType}`}>
       {placeholder}
     </button>
   );

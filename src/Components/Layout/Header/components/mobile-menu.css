@@ -1,3 +1,9 @@
+.header__mobile-menu-button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .header__mobile-menu--overlay {
   position: absolute;
   top: 0;
@@ -8,12 +14,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.header__mobile-menu-button {
-  border: 0;
-  background-color: transparent;
-  cursor: pointer;
 }
 
 .header__mobile-menu-button-close--active {

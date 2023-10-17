@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./sing-in.css";
 import ButtonSubmit from "../Components/buttons/button__submit";
 import ButtonLink from "../Components/buttons/button__link";
+import { useActions } from "../hooks/useAction";
 
 export default function SingIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { authUser } = useActions();
+
   return (
     <>
       <div className="sing-in">
@@ -15,6 +20,7 @@ export default function SingIn() {
               className="sing-in__form-input"
               type="email"
               placeholder="Ваша почта"
+              onChange={(e: any) => setEmail(e.target.value)}
             />
           </label>
           <label className="sing-in__form-label">
@@ -23,6 +29,7 @@ export default function SingIn() {
               className="sing-in__form-input"
               type="password"
               placeholder="Пароль"
+              onChange={(e: any) => setPassword(e.target.value)}
             />
           </label>
           <div className="sing-in__form-buttons">
@@ -32,7 +39,12 @@ export default function SingIn() {
               medium={true}
               transparent={true}
             />
-            <ButtonSubmit medium={true} fill={true} placeholder="Войти" />
+            <ButtonSubmit
+              onclick={() => authUser(email, password)}
+              medium={true}
+              fill={true}
+              placeholder="Войти"
+            />
           </div>
         </form>
       </div>

@@ -11,9 +11,16 @@ import ButtonLink from "../../buttons/button__link";
 
 // tsx компоненты
 import MobileMenu from "./components/mobile-menu";
+import { useTypeSelector } from "../../../hooks/useTypeSelector";
+import { isatty } from "tty";
+// import { useActions } from "../hooks/useAction";
+
+// const state = useTypeSelector((state) => state.mony);
+// const { GetMony } = useActions();
 
 export default function Header() {
   const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
+  const isAuth = useTypeSelector((state) => state.user);
 
   return (
     <header className="header">
@@ -23,7 +30,18 @@ export default function Header() {
         </Link>
 
         <div className="header__menu">
-          {isMobile ? (
+          {isAuth.isAuth ? (
+            <>
+              <button className="header__toogle--button">
+                <img
+                  className="header__toogle--image"
+                  src={iconToogle}
+                  alt="toogle"
+                />
+              </button>
+              <div>auth</div>
+            </>
+          ) : isMobile ? (
             <MobileMenu />
           ) : (
             <>
