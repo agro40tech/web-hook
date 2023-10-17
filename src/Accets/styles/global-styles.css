@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #262626;
+  --primary-accent-color: #fff;
+  --primary-input-color: #484848;
+}
+
+body {
+  background-color: var(--primary-color);
+  padding: 0 120px 0 120px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 0 60px 0 60px;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    padding: 0 20px 0 20px;
+  }
+}

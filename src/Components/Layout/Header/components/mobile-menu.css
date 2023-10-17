@@ -1,0 +1,40 @@
+.header__mobile-menu--overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__mobile-menu-button--button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header__mobile-menu-button-close--active {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+}
+
+.header__mobile-menu-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__mobile-menu-modal .button {
+  width: 100vw;
+  padding: 30px 0 30px 0;
+  font-size: 30px;
+}

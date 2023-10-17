@@ -1,0 +1,35 @@
+.button {
+  border: 0;
+  font-family: JetBrains Mono;
+  color: var(--primary-accent-color);
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s all linear;
+}
+
+.button--fill {
+  background-color: #336a2b;
+  border-radius: 5px;
+}
+
+.button--fill:hover {
+  background-color: #428639;
+}
+
+.button--transparent {
+  background-color: transparent;
+}
+
+.button--transparent:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.button--large {
+  padding: 10px 45px;
+}
+
+.button--medium {
+  font-size: 16px;
+  padding: 10px 20px;
+}
