@@ -2,11 +2,11 @@
 
 ## Структура папок src
 
-| index.tsx
-| logo.svg
-| react-app-env.d.ts
-| reportWebVitals.ts
-| setupTests.ts
+|   index.tsx
+|   logo.svg
+|   react-app-env.d.ts
+|   reportWebVitals.ts
+|   setupTests.ts
 |
 \---Pages
-main.tsx
+        main.tsx
