@@ -41,6 +41,19 @@
   height: 100%;
 }
 
+.user-profile-photo__container {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.user-profile-photo__container .user-profile-photo__image {
+  min-width: 70px;
+  max-height: 70px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-accent-color);
+}
+
 @media (max-width: 500px) {
   .header__logo--link {
     font-size: 30px;

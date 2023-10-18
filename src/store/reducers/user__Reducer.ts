@@ -4,17 +4,33 @@ import {
   UserState,
 } from "../../types/user__types";
 
-const Defaultt: UserState = {
+const Default: UserState = {
   isAuth: false,
+  userData: [
+    {
+      id: 0,
+      firstName: "Владимир",
+      surName: "Волков",
+      latname: "Владимирович",
+      email: "volkovvova67@gmail.com",
+      yearBirth: [
+        {
+          day: 27,
+        },
+        { month: 4 },
+        { year: 2003 },
+      ],
+      telephone: "+79198200581",
+      password: "45151987",
+      photo: "ava.jpg",
+    },
+  ],
 };
 
-export const UserReducer = (
-  state = Defaultt,
-  action: UserAction
-): UserState => {
+export const UserReducer = (state = Default, action: UserAction): UserState => {
   switch (action.type) {
     case UserActionTypes.SUCCESS_AUTH:
-      return { isAuth: action.payload };
+      return { ...state, isAuth: action.payload };
     default:
       return state;
   }

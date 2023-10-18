@@ -1,6 +1,6 @@
 export const users: any = [
   {
-    id: 1,
+    id: 0,
     firstName: "Владимир",
     surName: "Волков",
     latname: "Владимирович",
@@ -14,5 +14,6 @@ export const users: any = [
     ],
     telephone: "+79198200581",
     password: "45151987",
+    photo: "ava.jpg",
   },
 ];

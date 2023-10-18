@@ -9,6 +9,7 @@ export interface GetUserAction {
 
 export interface UserState {
   isAuth?: boolean;
+  userData?: any;
 }
 
 export type UserAction = GetUserAction;

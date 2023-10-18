@@ -1,12 +1,13 @@
-import { users } from "./users__Data";
+import { useTypeSelector } from "../hooks/useTypeSelector";
 
 export default function ValidateAuthData(
   email: string,
   password: string,
   successAuth: any
 ) {
-  if (email === users[0].email) {
-    if (password === users[0].password) {
+  const users: any = useTypeSelector((state) => state.user);
+  if (email === users.userData[0].email) {
+    if (password === users.userData[0].password) {
       successAuth();
       alert("true");
     }

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
+import { useTypeSelector } from "../../../hooks/useTypeSelector";
 
 // Стили
 import "./header-styles.css";
@@ -11,16 +12,19 @@ import ButtonLink from "../../buttons/button__link";
 
 // tsx компоненты
 import MobileMenu from "./components/mobile-menu";
-import { useTypeSelector } from "../../../hooks/useTypeSelector";
-import { isatty } from "tty";
-// import { useActions } from "../hooks/useAction";
+import PopUpMenu from "./components/popup__menu";
 
-// const state = useTypeSelector((state) => state.mony);
-// const { GetMony } = useActions();
+const ToogleButton = () => {
+  return (
+    <button className="header__toogle--button">
+      <img className="header__toogle--image" src={iconToogle} alt="toogle" />
+    </button>
+  );
+};
 
 export default function Header() {
   const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
-  const isAuth = useTypeSelector((state) => state.user);
+  const userData = useTypeSelector((state) => state.user);
 
   return (
     <header className="header">
@@ -30,28 +34,25 @@ export default function Header() {
         </Link>
 
         <div className="header__menu">
-          {isAuth.isAuth ? (
-            <>
-              <button className="header__toogle--button">
-                <img
-                  className="header__toogle--image"
-                  src={iconToogle}
-                  alt="toogle"
-                />
-              </button>
-              <div>auth</div>
-            </>
+          {/* Если человек авторизован */}
+          {userData.isAuth ? (
+            isMobile ? (
+              <>
+                <PopUpMenu />
+              </>
+            ) : (
+              <>
+                <ToogleButton />
+                <PopUpMenu />
+              </>
+            ) // Если человек не авторизован
           ) : isMobile ? (
+            // Если ширина экрана ровна или меньше 768px
             <MobileMenu />
           ) : (
+            // Если ширина экрана ровна или больше 768px
             <>
-              <button className="header__toogle--button">
-                <img
-                  className="header__toogle--image"
-                  src={iconToogle}
-                  alt="toogle"
-                />
-              </button>
+              <ToogleButton />
               <ButtonLink
                 path="singin"
                 placeholder="Войти"
