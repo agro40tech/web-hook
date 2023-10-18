@@ -8,6 +8,8 @@ import SingUp from "./Pages/sing-up";
 
 import "./Accets/styles/fonts.css";
 import "./Accets/styles/global-styles.css";
+import Profile from "./Pages/profile";
+import EditProfile from "./Pages/edit__profile";
 
 // Роутер по странице
 export default function App() {
@@ -19,6 +21,8 @@ export default function App() {
           <Route index element={<FeedPosts />} />
           <Route path="singin" element={<SingIn />} />
           <Route path="singup" element={<SingUp />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="profile/edit" element={<EditProfile />} />
         </Route>
       </Routes>
     </BrowserRouter>

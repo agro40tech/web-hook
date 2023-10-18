@@ -10,13 +10,13 @@ const popUp = (setShowModal: any) => {
       onClick={() => setShowModal(false)}
       onMouseLeave={() => setShowModal(false)}>
       <ButtonLink
-        path="/"
+        path="/profile"
         placeholder="Профиль"
         transparent={true}
         large={true}
       />
       <ButtonLink
-        path="/"
+        path="/profile/edit"
         placeholder="Настройк профиля"
         transparent={true}
         large={true}

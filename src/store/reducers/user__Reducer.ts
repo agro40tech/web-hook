@@ -9,8 +9,8 @@ const Default: UserState = {
   userData: [
     {
       id: 0,
-      firstName: "Владимир",
-      surName: "Волков",
+      firstname: "Владимир",
+      surname: "Волков",
       latname: "Владимирович",
       email: "volkovvova67@gmail.com",
       yearBirth: [
@@ -23,6 +23,8 @@ const Default: UserState = {
       telephone: "+79198200581",
       password: "45151987",
       photo: "ava.jpg",
+      about:
+        "Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et,Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et, Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et, Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et, ",
     },
   ],
 };
