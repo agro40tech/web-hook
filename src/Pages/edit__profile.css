@@ -1,0 +1,130 @@
+.edit-profile {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.edit-profile__form {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.edit-profile__form--wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  max-width: 585px;
+  width: 100%;
+}
+
+.edit-profile__form-label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-profile__form-input {
+  padding: 10px;
+  min-height: 50px;
+  border: 0;
+  border-radius: 10px;
+  background-color: var(--primary-input-color);
+  color: var(--primary-accent-color);
+  font-family: inherit;
+  font-size: 15px;
+  max-width: 400px;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .edit-profile__form-input {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 500px) {
+  .edit-profile__form-input {
+    max-width: 200px;
+  }
+}
+
+.edit-profile__form-about--wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 585px;
+  width: 100%;
+  gap: 30px;
+}
+
+.form-about-input {
+  max-width: 500px;
+  width: 100%;
+  min-height: 390px;
+  resize: none;
+}
+
+.edit-profile__form-about-user-picture {
+  max-width: 500px;
+  width: 100%;
+  align-self: flex-end;
+}
+
+.edit-profile__form-about-user-picture--container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-profile__form-about-user-picture--container .user-profile-photo__image {
+  min-width: 300px;
+  max-height: 300px;
+  border-radius: 15px;
+  border: 2px solid var(--primary-accent-color);
+}
+
+.edit-profile__form-about-user-picture--input {
+  height: 100%;
+  max-width: 150px;
+  width: 100%;
+}
+
+.edit-profile__form-about--wrapper .button {
+  margin-left: 75px;
+}
+
+@media (max-width: 1300px) {
+  .edit-profile__form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-about-label {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-about-input {
+    max-width: 585px;
+  }
+
+  .edit-profile__form-about-user-picture {
+    max-width: 585px;
+  }
+
+  .edit-profile__form-about-user-picture--input {
+    max-width: 250px;
+  }
+
+  .edit-profile__form-about--wrapper .button {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .edit-profile__form-about-user-picture--container {
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+  }
+}
