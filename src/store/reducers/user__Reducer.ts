@@ -6,6 +6,7 @@ import {
 
 const Default: UserState = {
   isAuth: false,
+  profileUrl: "profile/id_",
   userData: [
     {
       id: 0,
@@ -33,6 +34,8 @@ export const UserReducer = (state = Default, action: UserAction): UserState => {
   switch (action.type) {
     case UserActionTypes.SUCCESS_AUTH:
       return { ...state, isAuth: action.payload };
+    case UserActionTypes.SET_LINK_PROFILE:
+      return { ...state, profileUrl: state.profileUrl + action.payload };
     default:
       return state;
   }

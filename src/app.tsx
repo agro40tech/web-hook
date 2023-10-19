@@ -10,9 +10,13 @@ import "./Accets/styles/fonts.css";
 import "./Accets/styles/global-styles.css";
 import Profile from "./Pages/profile";
 import EditProfile from "./Pages/edit__profile";
+import { useTypeSelector } from "./hooks/useTypeSelector";
+import NotFoundPage from "./Pages/not__found";
 
 // Роутер по странице
 export default function App() {
+  const Data = useTypeSelector((state) => state.user);
+
   return (
     <BrowserRouter>
       <Routes>
@@ -21,8 +25,9 @@ export default function App() {
           <Route index element={<FeedPosts />} />
           <Route path="singin" element={<SingIn />} />
           <Route path="singup" element={<SingUp />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="profile/edit" element={<EditProfile />} />
+          <Route path={`${Data.profileUrl}`} element={<Profile />} />
+          <Route path={`${Data.profileUrl}/edit`} element={<EditProfile />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

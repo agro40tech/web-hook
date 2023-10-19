@@ -3,11 +3,14 @@ import "./sing-in.css";
 import ButtonSubmit from "../Components/buttons/button__submit";
 import ButtonLink from "../Components/buttons/button__link";
 import { useActions } from "../hooks/useAction";
+import { useTypeSelector } from "../hooks/useTypeSelector";
 
 export default function SingIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { authUser } = useActions();
+  const Data = useTypeSelector((state) => state.user);
+  const id = Data.userData[0].id;
 
   return (
     <>
@@ -40,7 +43,7 @@ export default function SingIn() {
               transparent={true}
             />
             <ButtonSubmit
-              onclick={() => authUser(email, password)}
+              onclick={() => authUser(email, password, id)}
               medium={true}
               fill={true}
               placeholder="Войти"

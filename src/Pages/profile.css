@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 50px;
   width: 100%;
+  margin-top: 30px;
 }
 
 .profile__user-info--wrapper {
@@ -14,8 +15,8 @@
 .profile__avatar-info {
   display: flex;
   justify-content: space-between;
-  gap: 15px;
-  min-width: 585px;
+  gap: 35px;
+  max-width: 585px;
 }
 
 .profile__user-avatar--container .user-profile-photo__image {
@@ -25,8 +26,20 @@
   border: 2px solid var(--primary-accent-color);
 }
 
+.profile__user-name {
+  font-size: 20px;
+}
+
+.profile__user-social-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
 .profile__user-gallery {
-  min-width: 585px;
+  max-width: 585px;
+  width: 100%;
 }
 
 .profile__user-about--wrapper {
@@ -49,4 +62,9 @@
 .profile__user-about--content {
   text-align: justify;
   line-height: 1.8;
+}
+
+.profile__user-posts {
+  max-width: 585px;
+  width: 100%;
 }

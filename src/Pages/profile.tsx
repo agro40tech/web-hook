@@ -1,3 +1,4 @@
+import Note from "../Components/notes/note";
 import GetProfilePhoto from "../Components/profile-photo/profile__photo";
 import { useTypeSelector } from "../hooks/useTypeSelector";
 import "./profile.css";
@@ -7,9 +8,19 @@ const UserInfo = () => {
 
   return (
     <div className="profile__user-info">
-      {Data.userData[0].firstname} {Data.userData[0].surname},{" "}
-      {Data.userData[0].yearBirth[0].day}.{Data.userData[0].yearBirth[1].month}.
-      {Data.userData[0].yearBirth[2].year}
+      <div className="profile__user-name">
+        {Data.userData[0].firstname} {Data.userData[0].surname},
+        {Data.userData[0].yearBirth[0].day}.
+        {Data.userData[0].yearBirth[1].month}.
+        {Data.userData[0].yearBirth[2].year}
+      </div>
+      <div className="profile__user-social-info">
+        <p>Подписчиков: </p>
+        <p>Подписок: </p>
+        <p>Постов: </p>
+        <p>Получено комментариев: </p>
+        <p>Полученой лайков: </p>
+      </div>
     </div>
   );
 };
@@ -35,7 +46,9 @@ export default function Profile() {
             {Data.userData[0].about}
           </p>
         </div>
-        <div className="profile__user-posts">Посты</div>
+        <div className="profile__user-posts">
+          <Note />
+        </div>
       </div>
     </div>
   );

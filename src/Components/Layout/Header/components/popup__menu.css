@@ -9,6 +9,13 @@
   padding: 10px 0 15px 0;
 }
 
+.user-profile-photo__container .user-profile-photo__image {
+  min-width: 70px;
+  max-height: 70px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-accent-color);
+}
+
 .popup-menu .button {
   text-align: left;
 }

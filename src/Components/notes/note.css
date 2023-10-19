@@ -1,0 +1,42 @@
+.post {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.post__header {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+
+.post__avatar-containter .user-profile-photo__image {
+  min-width: 70px;
+  max-height: 70px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-accent-color);
+  z-index: 0;
+}
+
+.post__user-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+}
+
+.post__heaer-line {
+  width: 98%;
+  border: 1px solid var(--primary-accent-color);
+  position: absolute;
+  left: 10px;
+  bottom: 15px;
+  z-index: -1;
+}
+
+.post__content {
+  text-align: justify;
+  line-height: 1.5;
+}

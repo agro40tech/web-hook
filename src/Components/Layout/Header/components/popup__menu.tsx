@@ -2,21 +2,22 @@ import { useState } from "react";
 import GetProfilePhoto from "../../../profile-photo/profile__photo";
 import ButtonLink from "../../../buttons/button__link";
 import "./popup__menu.css";
+import { useTypeSelector } from "../../../../hooks/useTypeSelector";
 
-const popUp = (setShowModal: any) => {
+const popUp = (ProfileLink: any, setShowModal: any) => {
   return (
     <div
       className="popup-menu"
       onClick={() => setShowModal(false)}
       onMouseLeave={() => setShowModal(false)}>
       <ButtonLink
-        path="/profile"
+        path={`${ProfileLink}`}
         placeholder="Профиль"
         transparent={true}
         large={true}
       />
       <ButtonLink
-        path="/profile/edit"
+        path={`${ProfileLink}/edit`}
         placeholder="Настройк профиля"
         transparent={true}
         large={true}
@@ -50,12 +51,13 @@ const profileButton = (showModal: boolean, setShowModal: any) => {
 };
 
 export default function PopUpMenu() {
+  const ProfileLink = useTypeSelector((state) => state.user.profileUrl);
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
       {profileButton(showModal, setShowModal)}
-      {showModal ? popUp(setShowModal) : null}
+      {showModal ? popUp(ProfileLink, setShowModal) : null}
     </>
   );
 }
