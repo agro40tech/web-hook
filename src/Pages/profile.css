@@ -8,8 +8,8 @@
 
 .profile__user-info--wrapper {
   display: flex;
-  justify-content: space-between;
-  gap: 30px;
+  justify-content: center;
+  gap: 100px;
 }
 
 .profile__avatar-info {
@@ -44,8 +44,8 @@
 
 .profile__user-about--wrapper {
   display: flex;
-  justify-content: space-between;
-  gap: 30px;
+  justify-content: center;
+  gap: 100px;
 }
 
 .profile__user-about {
@@ -67,4 +67,31 @@
 .profile__user-posts {
   max-width: 585px;
   width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .profile__user-info--wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile__user-about--wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile__avatar-info {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .profile__user-avatar--container {
+    width: 100%;
+  }
+
+  .profile__user-avatar--container .user-profile-photo__image {
+    width: 100%;
+  }
 }
