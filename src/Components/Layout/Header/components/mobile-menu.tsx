@@ -3,11 +3,14 @@ import { useState } from "react";
 import "./mobile-menu.css";
 
 import ButtonLink from "../../../buttons/button__link";
-import iconHamburgerButton from "../../../../Accets/images/hamburger-menu-svgrepo-com.svg";
+import iconHamburgerButtonDark from "../../../../Accets/images/hamburger-menu-dark.svg";
+import iconHamburgerButtonlight from "../../../../Accets/images/hamburger-menu-light.svg";
 import iconCloseButton from "../../../../Accets/images/close-svgrepo-com.svg";
+import { useTypeSelector } from "../../../../hooks/useTypeSelector";
 
 export default function MobileMenu() {
   const [showModal, setShoModal] = useState(false);
+  const activeTheme = useTypeSelector((state) => state.user).activeTheme;
 
   return (
     <>
@@ -39,7 +42,11 @@ export default function MobileMenu() {
         <button
           className="header__mobile-menu-button"
           onClick={() => setShoModal(true)}>
-          <img src={iconHamburgerButton} alt="Меню" />
+          {activeTheme === "dark" ? (
+            <img src={iconHamburgerButtonDark} alt="Меню" />
+          ) : activeTheme === "light" ? (
+            <img src={iconHamburgerButtonlight} alt="Меню" />
+          ) : null}
         </button>
       )}
     </>

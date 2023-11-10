@@ -6,5 +6,7 @@ export const note = [
       "Lorem ipsum dolor sit amet con laoreet et justo so simple e justo so simple e justo so simple e justo so simple e justo so simple",
     dateCreated: "07.07.2023",
     timeCreated: "15:00",
+    likes: 23,
+    avtorProfileUrl: "/profile/id_0",
   },
 ];

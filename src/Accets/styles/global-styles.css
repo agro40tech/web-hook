@@ -2,13 +2,35 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* outline: 1px solid red; */
 }
 
-:root {
+/* Темная тема */
+.page.theme__dark {
   --primary-color: #262626;
   --primary-accent-color: #fff;
   --primary-input-color: #484848;
   --primary-placeholder-color: #bebebe;
+}
+
+/* Светлая тема */
+.page.theme__light {
+  --primary-color: #ffffff;
+  --primary-accent-color: #000000;
+  --primary-input-color: rgb(201, 201, 201);
+  --primary-placeholder-color: #373737;
+}
+
+.page.theme__light .button--fill {
+  color: var(--primary-color);
+}
+
+.page.theme__light .popup-menu {
+  color: var(--primary-color);
+}
+
+.page.theme__light .header__mobile-menu-modal .button {
+  color: var(--primary-color);
 }
 
 body {
@@ -20,6 +42,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-size: 18px;
 }
 
 @media (max-width: 1000px) {

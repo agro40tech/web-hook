@@ -4,6 +4,8 @@ import {
   UserState,
 } from "../../types/user__types";
 
+const theme = localStorage.getItem("theme");
+
 const Default: UserState = {
   isAuth: false,
   profileUrl: "profile/id_",
@@ -28,6 +30,7 @@ const Default: UserState = {
         "Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et,Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et, Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et, Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et, ",
     },
   ],
+  activeTheme: `${theme}`,
 };
 
 export const UserReducer = (state = Default, action: UserAction): UserState => {
@@ -36,6 +39,8 @@ export const UserReducer = (state = Default, action: UserAction): UserState => {
       return { ...state, isAuth: action.payload };
     case UserActionTypes.SET_LINK_PROFILE:
       return { ...state, profileUrl: state.profileUrl + action.payload };
+    case UserActionTypes.SET_ACTIVE_THEME:
+      return { ...state, activeTheme: action.payload };
     default:
       return state;
   }

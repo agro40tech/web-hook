@@ -1,5 +1,8 @@
 .feed-posts {
   max-width: 585px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .feed-posts__title {
@@ -9,5 +12,26 @@
 }
 
 .feed-posts__posts {
-  height: 100%;
+  max-height: calc(100vh - 250px);
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  padding-right: 15px;
+}
+
+.feed-posts__posts::-webkit-scrollbar {
+  width: 3px;
+  height: 50vh;
+}
+
+.feed-posts__posts::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+.feed-posts__posts::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
 }

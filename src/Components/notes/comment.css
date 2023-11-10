@@ -1,0 +1,43 @@
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 55px;
+}
+
+.comment__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.post__avatar-comment .user-profile-photo__image {
+  min-width: 50px;
+  max-height: 50px;
+}
+
+.comment__user-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.comment__content {
+  margin-left: 50px;
+  font-size: 16px;
+}
+
+.comment__likes {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  font-size: 16px;
+}
+
+.comment__like-img {
+  width: 30px;
+  height: 30px;
+}

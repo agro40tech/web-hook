@@ -1,5 +1,6 @@
 import React from "react";
 import "./feed__posts.css";
+import Note from "../Components/notes/note";
 
 // import { useTypeSelector } from "../hooks/useTypeSelector";
 // import { useActions } from "../hooks/useAction";
@@ -11,7 +12,11 @@ export default function FeedPosts() {
   return (
     <div className="feed-posts">
       <h3 className="feed-posts__title">Лента</h3>
-      <div className="feed-posts__posts">Волков Владимир пост</div>
+      <div className="feed-posts__posts">
+        <Note />
+        <Note />
+        <Note />
+      </div>
     </div>
   );
 }

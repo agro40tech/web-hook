@@ -7,20 +7,12 @@ import { useTypeSelector } from "../../../hooks/useTypeSelector";
 import "./header-styles.css";
 
 // Картинки
-import iconToogle from "../../../Accets/images/toggle-off-svgrepo-com.svg";
 import ButtonLink from "../../buttons/button__link";
 
 // tsx компоненты
 import MobileMenu from "./components/mobile-menu";
 import PopUpMenu from "./components/popup__menu";
-
-const ToogleButton = () => {
-  return (
-    <button className="header__toogle--button">
-      <img className="header__toogle--image" src={iconToogle} alt="toogle" />
-    </button>
-  );
-};
+import ToogleButton from "../../buttons/button__togle";
 
 export default function Header() {
   const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
@@ -48,7 +40,10 @@ export default function Header() {
             ) // Если человек не авторизован
           ) : isMobile ? (
             // Если ширина экрана ровна или меньше 768px
-            <MobileMenu />
+            <>
+              <ToogleButton />
+              <MobileMenu />
+            </>
           ) : (
             // Если ширина экрана ровна или больше 768px
             <>
