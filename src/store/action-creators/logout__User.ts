@@ -1,16 +1,15 @@
 import { Dispatch } from "redux";
 import { UserActionTypes, UserAction } from "../../types/user__types";
-import { users } from "../../FakeData/users__Data";
 import AuthService from "../../services/auth__service";
 
-export const authUser = (email: string, password: string) => {
+export const logOut = () => {
   return async (dispatch: Dispatch<UserAction>) => {
     try {
-      const response = await AuthService.login(email, password);
-      localStorage.setItem("token", response.data.userData.tokens.accessToken);
+      await AuthService.logout();
+      localStorage.removeItem("token");
       dispatch({
         type: UserActionTypes.SUCCESS_AUTH,
-        payload: true,
+        payload: false,
       });
     } catch (err) {
       console.log(err);

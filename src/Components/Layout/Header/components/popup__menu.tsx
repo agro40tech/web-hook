@@ -3,8 +3,10 @@ import GetProfilePhoto from "../../../profile-photo/profile__photo";
 import ButtonLink from "../../../buttons/button__link";
 import "./popup__menu.css";
 import { useTypeSelector } from "../../../../hooks/useTypeSelector";
+import ButtonSubmit from "../../../buttons/button__submit";
+import { useActions } from "../../../../hooks/useAction";
 
-const popUp = (ProfileLink: any, setShowModal: any) => {
+const popUp = (ProfileLink: any, setShowModal: any, logout: any) => {
   return (
     <div
       className="popup-menu"
@@ -22,8 +24,8 @@ const popUp = (ProfileLink: any, setShowModal: any) => {
         transparent={true}
         large={true}
       />
-      <ButtonLink
-        path="/"
+      <ButtonSubmit
+        onclick={() => logout()}
         placeholder="Выйти"
         transparent={true}
         large={true}
@@ -53,11 +55,12 @@ const profileButton = (showModal: boolean, setShowModal: any) => {
 export default function PopUpMenu() {
   const ProfileLink = useTypeSelector((state) => state.user.profileUrl);
   const [showModal, setShowModal] = useState(false);
+  const { logOut } = useActions();
 
   return (
     <>
       {profileButton(showModal, setShowModal)}
-      {showModal ? popUp(ProfileLink, setShowModal) : null}
+      {showModal ? popUp(ProfileLink, setShowModal, logOut) : null}
     </>
   );
 }

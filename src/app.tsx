@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Layout from "./Components/Layout";
@@ -12,10 +12,17 @@ import Profile from "./Pages/profile";
 import EditProfile from "./Pages/edit__profile";
 import { useTypeSelector } from "./hooks/useTypeSelector";
 import NotFoundPage from "./Pages/not__found";
+import { useActions } from "./hooks/useAction";
 
 // Роутер по странице
 export default function App() {
   const Data = useTypeSelector((state) => state.user);
+  const { checkAuth } = useActions();
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      checkAuth();
+    }
+  }, []);
 
   return (
     <BrowserRouter>

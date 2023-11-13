@@ -43,7 +43,7 @@ export default function SingIn() {
               transparent={true}
             />
             <ButtonSubmit
-              onclick={() => authUser(email, password, id)}
+              onclick={() => authUser(email, password)}
               medium={true}
               fill={true}
               placeholder="Войти"
